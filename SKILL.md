@@ -1,60 +1,59 @@
 ---
 name: github-cred
-description: Analyze GitHub user contribution quality. Evaluates owned repos, external contributions, output quality, and social influence. Triggers on "github cred", "含金量", "analyze github".
+description: Analyze GitHub user contribution quality. Evaluates owned repos, external contributions, output quality, and social influence. Triggers on "github cred", "analyze github".
 author: zerone0x
 version: 1.0.0
 ---
 
-# GitHub Cred — 含金量分析
+# GitHub Cred
 
-分析 GitHub 用户的开源贡献含金量。
+Analyze GitHub user contribution quality.
 
-## 触发词
+## Triggers
 
 - `github cred <username>`
-- `分析 <username> 的 GitHub`
-- `<username> 含金量`
+- `analyze <username>'s github`
 
 ---
 
-## 四层评分体系
+## Four-Tier Scoring System
 
-### Tier 0 — 自有高星项目 (30%)
+### Tier 0 — Owned High-Star Repos (30%)
 
-| 指标 | 计分 |
-|------|------|
-| 拥有 ≥10k⭐ 项目 | +30 |
-| 拥有 ≥5k⭐ 项目 | +20 |
-| 拥有 ≥1k⭐ 项目 | +10 |
+| Metric | Score |
+|--------|-------|
+| Own ≥10k⭐ repo | +30 |
+| Own ≥5k⭐ repo | +20 |
+| Own ≥1k⭐ repo | +10 |
 
-*Cap: 30分。自己造轮子 > 给别人贡献*
+*Cap: 30. Creator > Contributor*
 
-### Tier 1 — 外部高星项目贡献 (30%)
+### Tier 1 — External Contributions (30%)
 
-| 指标 | 计分 |
-|------|------|
-| ≥100k⭐ 项目 merged PR | +4/PR |
-| ≥10k⭐ 项目 merged PR | +2/PR |
-| ≥1k⭐ 项目 merged PR | +1/PR |
-| 非 trivial (>20 lines) | ×1.5 |
+| Metric | Score |
+|--------|-------|
+| Merged PR in ≥100k⭐ repo | +4/PR |
+| Merged PR in ≥10k⭐ repo | +2/PR |
+| Merged PR in ≥1k⭐ repo | +1/PR |
+| Non-trivial (>20 lines) | ×1.5 |
 
-*Cap: 30分*
+*Cap: 30*
 
-### Tier 2 — 产出质量 (20%)
+### Tier 2 — Output Quality (20%)
 
-| 指标 | 计分 |
-|------|------|
+| Metric | Score |
+|--------|-------|
 | Merge rate ≥70% | +10 |
 | Merge rate ≥50% | +7 |
-| 代码占比 ≥80% | +5 |
-| 项目多样性 ≥10 repos | +5 |
+| Code ratio ≥80% | +5 |
+| Diversity ≥10 repos | +5 |
 
-*Cap: 20分*
+*Cap: 20*
 
-### Tier 3 — 社区影响力 (20%)
+### Tier 3 — Social Influence (20%)
 
-| 指标 | 计分 |
-|------|------|
+| Metric | Score |
+|--------|-------|
 | ≥5k followers | +20 |
 | ≥2k followers | +15 |
 | ≥1k followers | +12 |
@@ -65,44 +64,44 @@ version: 1.0.0
 
 ---
 
-## 评级
+## Grades
 
-| 等级 | 分数 | 描述 |
-|------|------|------|
-| S | 95+ | 传奇 — 顶级项目作者 + 核心贡献者 + 大V |
-| A+ | 85-94 | 大神 — 高星项目作者 或 顶级项目贡献者 |
-| A | 70-84 | 资深 — 有实质贡献的活跃开发者 |
-| B | 50-69 | 活跃 — 稳定贡献者 |
-| C | 30-49 | 入门 — 有贡献但不深入 |
-| D | <30 | 新手 |
+| Grade | Score | Description |
+|-------|-------|-------------|
+| S | 95+ | Legend — top project creator + core contributor + influencer |
+| A+ | 85-94 | Master — high-star project owner OR top project contributor |
+| A | 70-84 | Senior — active developer with real contributions |
+| B | 50-69 | Active — steady contributor |
+| C | 30-49 | Beginner — some contributions |
+| D | <30 | Newbie |
 
 ---
 
-## 输出格式
+## Output Format
 
 ```
 📊 GitHub Cred: @username
 
-🏆 XX/100 (等级)
+🏆 XX/100 (Grade)
 
-▸ Tier 0 自有项目 (XX/30)
+▸ Tier 0 Owned Repos (XX/30)
   👑 repo1 ⭐XXk
 
-▸ Tier 1 外部贡献 (XX/30)
+▸ Tier 1 External Contributions (XX/30)
   🔨 org/repo ⭐XXk × N PRs
 
-▸ Tier 2 产出质量 (XX/20)
-  📈 Merge rate XX% | 代码占比 XX%
+▸ Tier 2 Output Quality (XX/20)
+  📈 Merge rate XX% | Code ratio XX%
 
-▸ Tier 3 社区影响 (XX/20)
+▸ Tier 3 Social Influence (XX/20)
   👥 X,XXX followers
 ```
 
 ---
 
-## 两条路到 A+
+## Two Paths to A+
 
-- **作者路线** — 造一个 10k+ stars 项目
-- **贡献者路线** — 深耕多个顶级项目（100k+ stars）
+- **Creator path** — Build one 10k+ stars project
+- **Contributor path** — Deep contributions to multiple top projects (100k+ stars)
 
-混合型最强。
+Mixed is strongest.

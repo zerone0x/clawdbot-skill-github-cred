@@ -27,7 +27,7 @@ Analyze GitHub user contribution quality with a four-tier scoring system.
 ```
 @bot github cred <username>
 @bot analyze <username>'s github
-@bot <username> 含金量
+@bot <username> github cred
 ```
 
 ## Example Output

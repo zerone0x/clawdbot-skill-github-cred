@@ -33,21 +33,21 @@ Analyze GitHub user contribution quality with a four-tier scoring system.
 ## Example Output
 
 ```
-📊 GitHub Cred: @yetone
+📊 GitHub Cred: @username
 
-🏆 92/100 (A+)
+🏆 85/100 (A+)
 
 ▸ Tier 0 (30/30)
-  👑 avante.nvim ⭐17k
+  👑 awesome-project ⭐12k
 
-▸ Tier 1 (8/30)
-  🔨 2 high-star projects
+▸ Tier 1 (20/30)
+  🔨 5 high-star projects
 
-▸ Tier 2 (15/20)
-  📈 High output
+▸ Tier 2 (18/20)
+  📈 Merge rate 75% | Code ratio 85%
 
-▸ Tier 3 (20/20)
-  👥 7,042 followers
+▸ Tier 3 (10/20)
+  👥 1,200 followers
 ```
 
 ## Two paths to A+
